@@ -15,3 +15,6 @@
 *.html
 r_markdown_files
 r_markdown_cache
+
+# Data
+data
