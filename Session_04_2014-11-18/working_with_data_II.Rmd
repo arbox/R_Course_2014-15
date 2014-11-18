@@ -88,10 +88,10 @@ xmlEventParse(
 #names(tokens) <- NULL
 tokens <- unname(tokens)
 ```
-```
 
 
 ## Hausaufgabe
+
 * Einen Dataframe mit dem Wort, Lemma und Wortart anlegen.
 
 * Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern.
