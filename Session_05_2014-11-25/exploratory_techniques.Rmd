@@ -3,6 +3,11 @@
 ## Daten einlesen
 ```{r input, echo = TRUE}
 df <- read.table('../data/03-1_aeh(m).txt', header = T)
+
+str(df)
+
+head(df)
+tail(df, n = 3)
 ```
 
 ## Klassenbildung
@@ -13,12 +18,48 @@ k = \log_2 n + 1
 $$
 
 ## Häufigkeistverteilungen
+```{r table, echo = T}
+head(df$FILLER)
+
+attach(df)
+str(FILLER)
+
+table(FILLER)
+
+table(FILLER) / length(FILLER)
+
+prop.table(table(FILLER))
+
+cumsum(table(FILLER))
+```
+
 
 ## Kuchendiagramme
 
+```{r piechart, echo = TRUE}
+pie(table(FILLER))
+```
+
+
 ## Balkendiagramme
 
+```{r barplot, echo = T}
+barplot(table(FILLER))
+barplot(table(FILLER),
+        main = 'Unser Balkendiagramm',
+        # ylim
+        # xlim
+        col = c('red', 'green', 'blue'),
+        names.arg = c('Aeh', 'Aehm', 'Volle Stille')
+        )
+
+```
+
+
 ## Histogramme
+```{r hist, echo = T} 
+hist(LAENGE, breaks = c(200,350, 800, 1600))
+```
 
 ## Hausaufgabe
 
