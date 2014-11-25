@@ -1,0 +1,29 @@
+# Explorative Analyse
+
+## Daten einlesen
+```{r input, echo = TRUE}
+df <- read.table('../data/03-1_aeh(m).txt', header = T)
+```
+
+## Klassenbildung
+
+Sturges' Formel
+$$
+k = \log_2 n + 1
+$$
+
+## Häufigkeistverteilungen
+
+## Kuchendiagramme
+
+## Balkendiagramme
+
+## Histogramme
+
+## Hausaufgabe
+
+* Ein Dataframe mit Wortlängen und jeweiligen Wortformen aus einer XML-Datei erstellen.
+* Eine gruppierte Datenreihe aus den rohen Daten konstruieren, die die Frequenzen berücksichtigt
+  (welcher Datentyp ist das?).
+* Diese Häufigkeitsverteilung mit einem Histogramm und einem Balkendiagramm darstellen.
+* Ein Balkendiagramm mit der Bibliothek `ggplot2` mit denselben Daten erstellen (oder mindestens versuchen).
