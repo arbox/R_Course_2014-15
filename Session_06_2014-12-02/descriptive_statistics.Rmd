@@ -1,0 +1,52 @@
+# Desktiptive Maße I
+
+## Daten
+```{r reading_XML, highlight = TRUE, results = 'hide', echo = TRUE, cache = TRUE}
+library(XML)
+
+tokens <- vector('character')
+types <- vector('character')
+
+xmlEventParse(
+  "../data/t_990505_47.xml", 
+  handlers = list(
+    't' = function(name, attr) {
+      tokens <<- c(tokens, attr['word'])
+      types <<- c(types, attr['lemma'])
+      ## morphology
+      }
+    ),
+  addContext = FALSE
+  )
+
+tokens <- unname(tokens)
+token.lengths <- nchar(tokens)
+```
+
+## Modus
+```{r mode, echo = T}
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+token.lengths
+table(token.lengths)
+mode(token.lengths)
+```
+
+## Median
+```{r median, echo = T}
+median(token.lengths)
+```
+
+## Quantile
+```{r quantile, echo = T}
+#quantile()
+```
+
+## Treppenfunktionen
+```{r, functionplot, echo = T}
+
+```
+
