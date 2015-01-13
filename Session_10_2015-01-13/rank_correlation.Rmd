@@ -14,6 +14,7 @@ $$
 
 ```{r data}
 fast.food.data <- read.table('fast_food_revenues.csv', header = T, sep = ',')
+fast.food.data
 ```
 
 ## Rang berechnen
@@ -21,11 +22,14 @@ fast.food.data <- read.table('fast_food_revenues.csv', header = T, sep = ',')
 
 sales.rank <- rank(fast.food.data$Sales)
 location.rank <- rank(fast.food.data$Locations)
+sales.rank
+location.rank
 ```
 
 ## Daten vorbereiten
 ```{r cbind}
 fast.food.data <- cbind(fast.food.data, LocationRank = location.rank, SalesRank = sales.rank)
+fast.food.data
 ```
 
 ## Visuelle Darstellung
