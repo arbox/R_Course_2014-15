@@ -23,6 +23,10 @@ cor(x, y)
 cor(y, x)
 ```
 
+```{r matrix.preview}
+matrix
+```
+
 
 ## Regressionsgerade
 
@@ -56,6 +60,8 @@ cor(x,z)
 ```{r hours}
 load('hours.RData')
 hours
+
+plot(hours$Hours~ hours$GPA)
 
 cor(hours$Hours, hours$GPA)
 

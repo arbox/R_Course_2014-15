@@ -4,10 +4,14 @@
 ```{r z}
 kursA <- rep(1:6, 1:6)
 kursB <- rep(seq(1,12,by=2), 1:6)
+kursA; kursB
 z.A <- (kursA - mean(kursA))/sd(kursA)
 z.B <- (kursB - mean(kursB))/sd(kursB)
 scale(kursA)
 scale(kursB)
+z.A; z.B
+plot(density(kursA))
+plot(density(kursB))
 ```
 
 
@@ -36,8 +40,8 @@ planungspausen <- read.table('../data/03-1_aeh(m).txt', header = T)
 ```
 
 ```{r hist}
-hist(planungspausen$LAENGE, freq = F)
-lines(density(planungspausen$LAENGE))
+hist(planungspausen$LAENGE, freq = T)
+#lines(density(planungspausen$LAENGE))
 ```
 
 ```{r ggplot_hist}
