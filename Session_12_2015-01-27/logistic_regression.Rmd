@@ -1,0 +1,73 @@
+---
+title: "Binäre logistische Regression"
+author: "Andrei Beliankou"
+date: "01/27/2015"
+output: html_document
+---
+========================================================
+
+# Einleitung
+
+Binäre logistische Regression ist ein Klassifikationsverfahren. Dies beschreibt den Zusammenhang
+von stetigen (kontinuierlichen) Prädiktorvariablen und einer binären (nominalen) Ausgangsvariable.
+
+
+## Binäre logistische Regression mit einem binären Prädiktor
+
+``` {r}
+binges <- read.table('binges.csv', header = T, sep = ',')
+head(binges)
+```
+
+```{r}
+binges.table <- table(binges)
+binges.table
+```
+
+```{r}
+chisq.test(binges.table)
+```
+
+```{r}
+plot(binges)
+```
+
+```{r}
+results <- fit <- glm(binges$binges ~ binges$gender, family = binomial)
+summary(results)
+```
+
+## Binäre logistische Regression mit einem stetigen Prädiktor
+
+```{r}
+retention <- read.table('retention.csv', header = T, sep = ',')
+head(retention)
+```
+
+```{r}
+plot(retention)
+```
+
+```{r}
+results <- glm(retention$Retention ~ retention$HSGPA, family = binomial)
+summary(results)
+```
+
+```{r}
+predicted <- results$fitted.values
+plot(retention$HSGPA, predicted, type = 'p')
+```
+
+
+## Aufgaben
+- extrahieren Sie aus einem Text Angaben zu den Wortlängen in Buchstaben;
+- bestimmen Sie für jedes Wort, ob es um eine synsemantische oder autosemantische
+  Wortart geht;
+- finden Sie ein ein passendes logistisches Regressionsmodell für diese Daten;
+- bestimmen Sie, ob der Zusammenhang zwischen der Funktion und der Länge besteht. 
+
+## Quellen
+
+  - Gries 2008, S. 284-294
+  - Gries 2013, S. 293-316
+  - Pace 2012, S. 201-207
