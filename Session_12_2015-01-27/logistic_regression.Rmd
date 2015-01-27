@@ -16,7 +16,7 @@ von stetigen (kontinuierlichen) Prädiktorvariablen und einer binären (nominale
 
 ``` {r}
 binges <- read.table('binges.csv', header = T, sep = ',')
-head(binges)
+sample(binges)
 ```
 
 ```{r}
@@ -33,7 +33,7 @@ plot(binges)
 ```
 
 ```{r}
-results <- fit <- glm(binges$binges ~ binges$gender, family = binomial)
+results <- glm(binges$binges ~ binges$gender, family = binomial)
 summary(results)
 ```
 
